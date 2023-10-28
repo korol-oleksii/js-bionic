@@ -1,5 +1,5 @@
 //завдання 3
-alert('Hello world - я завантажений з окремого файлу "lesson-01.js"');
+alert('Hello world from "lesson-01.js"');
 
 //завдання 5
 let a = 1;
