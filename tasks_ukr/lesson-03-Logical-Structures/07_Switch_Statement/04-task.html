@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+
+<body>
+    <pre>
+        Завдання:
+        Доопрацюйте сценарій. Додайте розрахунок знижки.
+        Якщо замовлення від 500, знижка 5%, якщо замовлення від 1000 знижка 10%, якщо замовлення від 1500 знижка 15% та
+        додаткова безкоштовна.
+        Виведіть користувачеві вартість замовлення з урахуванням знижки та суму знижки, яку він отримав.
+        Також інформацію про вартість доставки, якщо вона була замовлена.
+        Використовуйте відповідну умовну конструкцію.
+    </pre>
+    <script>
+        let product1 = "Папір офісний А4, 80 г/м2, 500 л";
+        let product2 = "Біндери для паперу 51 мм";
+        let product3 = "Ручка кулькова синя";
+
+        let productPrice1 = 280.25;
+        let productPrice2 = 56;
+        let productPrice3 = 12.50;
+
+        let productQuantity1 = prompt(`Вкажіть кількість продуктів '${product1}', ціна ${productPrice1}`, 0);
+        let productQuantity2 = prompt(`Вкажіть кількість продуктів '${product2}', ціна ${productPrice2}`, 0);
+        let productQuantity3 = prompt(`Вкажіть кількість продуктів '${product3}', ціна ${productPrice3}`, 0);
+
+        let totalPriceProduct1 = productPrice1 * productQuantity1;
+        let totalPriceProduct2 = productPrice2 * productQuantity2;
+        let totalPriceProduct3 = productPrice3 * productQuantity3;
+
+        let total = totalPriceProduct1 + totalPriceProduct2 + totalPriceProduct3;
+        console.log(`Загальна сума продукту '${product1}' складає ${totalPriceProduct1}`);
+        console.log(`Загальна сума продукту '${product2}' складає ${totalPriceProduct2}`);
+        console.log(`Загальна сума продукту '${product3}' складає ${totalPriceProduct3}`);
+
+        let shipping = confirm("Замовляєте доставку кур'єром?");
+        // if (shipping) {
+        //     total += 40;
+        //     console.log("Доставка 40");
+        // }
+        //
+        // console.log("Всього " + total);
+
+        let sale5 = 5;
+        let sale10 = 10;
+        let sale15 = 15;
+
+        let saleSum5 = total / 100 * sale5;
+        let saleSum10 = total / 100 * sale10;
+        let saleSum15 = total / 100 * sale15;
+
+        let costShipping = 40;
+
+        if (total >= 500 && total < 999) {
+            allSaleSum = total - saleSum5;
+            alert(`Сума Вашого замовлення: ${total}\r\nДо Вашого замовлення додається знижка в ${sale5}%\r\nСума знижки: ${saleSum5}\r\nПовна сума зі знижкою: ${allSaleSum}`);
+            if (shipping) {
+                allSaleSum += costShipping;
+                alert(`Вартість доставки: ${costShipping}\r\nЗагальна сума зі знижкою та доставкою: ${allSaleSum}`);
+            }
+        } else if (total >= 1000 && total < 1499) {
+            allSaleSum = total - saleSum10;
+            alert(`Сума Вашого замовлення: ${total}\r\nДо Вашого замовлення додається знижка в ${sale10}%\r\nСума знижки: ${saleSum10}\r\nПовна сума зі знижкою: ${allSaleSum}`);
+            if (shipping) {
+                allSaleSum += costShipping;
+                alert(`Вартість доставки: ${costShipping}\r\nЗагальна сума зі знижкою та доставкою: ${allSaleSum}`);
+            }
+        } else if (total >= 1500) {
+            allSaleSum = total - saleSum15;
+            alert(`Сума Вашого замовлення: ${total}\r\nДо Вашого замовлення додається знижка в ${sale15}%\r\nСума знижки: ${saleSum15}\r\nПовна сума зі знижкою: ${allSaleSum}`);
+            if (shipping) {
+                alert(`Доставка безкоштовна!\r\nЗагальна сума до сплати: ${allSaleSum}`);
+            }
+        } else {
+            alert(`Сума Вашого замовлення: ${total}\r\n`);
+            if (shipping) {
+                total += costShipping;
+                alert(`Вартість доставки: ${costShipping}\r\nЗагальна сума з доставкою: ${total}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

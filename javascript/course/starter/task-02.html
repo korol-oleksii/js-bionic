@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Анаграма | Курсова Starter</title>
+</head>
+<body>
+
+<h3>Завдання 2</h3>
+<p>
+    Напишіть функцію, яка порівнює два рядки та визначає, чи є вони анаграмою (слова складаються з одних і тих самих букв). Рядки отримуємо від користувача за допомогою 2-х методів prompt.
+</p>
+<script>
+    //Апельсин = спаниель
+
+    let value1 = prompt('Визначте слово анаграм.\r\nВведіть перше слово:');
+    let value2 = prompt('Введіть друге слово:');
+
+    function isAnagram(a, b) {
+        a = value1.toLowerCase().split('').sort().join('');
+        b = value2.toLowerCase().split('').sort().join('');
+
+        if (a === b) {
+            alert('Ці слова є анаграмою');
+        } else {
+            alert(`Слова "${value1}" та "${value2}" НЕ є анаграмою`);
+        }
+
+        console.log(`${value1} => ${a}`);
+        console.log(`${value2} => ${b}`);
+    }
+
+    isAnagram(value1, value2);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Дано масив. Знайдіть середнє арифметичне значень цього масиву.
+        Виведіть на екран лише ті елементи, які більші від цього середнього арифметичного значення
+    </pre>
+    <script>
+        let values = [10, 20, 48, 6, 11, 9, 125, 1, 8, 0, 3, 255, 77, 11, 170, 4, 28 ];
+
+        let sumArr = 0;
+        let sumKey = 0;
+        let sRes = 0;
+
+        for (let i = 0; i < values.length; i++) {
+            sumArr += values[i];
+            sumKey = i + 1;
+            sRes = sumArr / sumKey;
+        }
+        console.log('сума значень масиву:', sumArr);
+        console.log('кількість значень:', sumKey);
+        console.log('середнє арифметичне:', sRes);
+
+        console.log('\r\nелементи, які більші від середнього арифметичного значення:');
+
+        for (let value of values) {
+            if (value > sRes) {
+                console.log(value);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

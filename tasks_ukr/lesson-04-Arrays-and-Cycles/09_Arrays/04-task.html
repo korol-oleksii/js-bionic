@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Дано масив. Створіть на основі значень цього масиву два нових масиву.
+        В один масив помістіть усі парні значення, а в інший - усі непарні.
+        Виведіть на екран значення, які увійшли до першого масиву та другого масиву.
+    </pre>
+    <script>
+        let values = [10, 20, 5, 7, 11, 8, 125, 4, 8, 3, 23];
+
+        console.log('=== for...of =====');
+
+        let arrOddOf = [];
+        let arrEvenOf = [];
+
+        for (let odd of values) {
+            if (odd % 2 === 1) {
+                // console.log(odd);
+                // arrOddOf[0] = 5;
+                // arrOddOf[1] = 7;
+                // arrOddOf[2] = 11;
+                // arrOddOf[3] = 125;
+                // arrOddOf[4] = 3;
+                // arrOddOf[5] = 23;
+                arrOddOf.push(odd);
+            }
+        }
+        console.log(arrOddOf);
+
+        for (let even of values) {
+            if (even % 2 === 0) {
+                // console.log(even);
+                arrEvenOf.push(even);
+            }
+        }
+        console.log(arrEvenOf);
+
+        console.log('=== for...i =====');
+
+        let arrOddI = [];
+        let arrEvenI = [];
+
+        for (let odd = 0; odd < values.length; odd++) {
+            let elOdd = values[odd];
+            if (elOdd % 2 === 1) {
+                // console.log(elOdd);
+                arrOddI.push(elOdd);
+            }
+        }
+        console.log(arrOddI);
+
+        for (let even = 0; even < values.length; even++) {
+            let elEven = values[even];
+            if (elEven % 2 === 0) {
+                // console.log(elEven);
+                arrEvenI.push(elEven);
+            }
+        }
+        console.log(arrEvenI);
+
+    </script>
+</body>
+</html>

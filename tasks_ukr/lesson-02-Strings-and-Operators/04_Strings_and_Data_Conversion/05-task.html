@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task5</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Виконайте завдання відповідно до коментаря у коді
+    </pre>
+    <script>
+        let product1 = "Папір офісний А4, 80 г/м2, 500 л";
+        let product2 = "Біндери для паперу 51 мм";
+        let product3 = "Ручка кулькова синя";
+
+        let productPrice1 = 280.25;
+        let productPrice2 = 56;
+        let productPrice3 = 12.50;
+
+        let productQuantity1 = +prompt(`Вкажіть кількість продуктів '${product1}', ціна ${productPrice1}`, 0);
+        let productQuantity2 = +prompt(`Вкажіть кількість продуктів '${product2}', ціна ${productPrice2}`, 0);
+        let productQuantity3 = +prompt(`Вкажіть кількість продуктів '${product3}', ціна ${productPrice3}`, 0);
+
+        // Виведіть на екран скільки користувачеві потрібно заплатити за кожен продукт за індивідуальністю і всього за
+        // всі продукти
+        // Використовуйте форматоване виведення інформації
+
+        //==========================================================
+
+        // сума за кожен продукт за індивідуальністю
+        let sumProduct1 = productQuantity1 * productPrice1;
+        let sumProduct2 = productQuantity2 * productPrice2;
+        let sumProduct3 = productQuantity3 * productPrice3;
+
+        alert(`Сума за ${product1}: ${sumProduct1} у.о`);
+        alert(`Сума за ${product2}: ${sumProduct2} у.о`);
+        alert(`Сума за ${product3}: ${sumProduct3} у.о`);
+
+        // за всі продукти
+
+        // v1
+        //sumAllProducts = sumProduct1 + sumProduct2 + sumProduct3;
+
+        //v2
+        let sumAllProducts = 0;
+
+        sumAllProducts += sumProduct1;
+        sumAllProducts += sumProduct2;
+        sumAllProducts += sumProduct3;
+
+        alert(`Сума всіх Ваших замовлень: ${sumAllProducts} у.о`);
+
+    </script>
+</body>
+</html>
+

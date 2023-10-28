@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Це масив. Змініть елемент із максимальним значенням місцями з елементом із мінімальним значенням.
+    </pre>
+    <script>
+        let values = [10, 20, 4, 6, 11, 9, 125, 1, 8, 0, 3];
+
+        let max = Number.MIN_VALUE;
+        let min = Number.MAX_VALUE;
+
+        // for (let valueMax of values) {
+        //     if (valueMax > max) {
+        //         max = valueMax;
+        //     }
+        // }
+        // console.log(max);
+        //
+        // for (let valueMin of values) {
+        //     if (valueMin < min) {
+        //         min = valueMin;
+        //     }
+        // }
+        // console.log(min);
+
+        for (let vMax = 0; vMax < values.length; vMax++) {
+            const elMax = values[vMax];
+            if (elMax > max) {
+                max = elMax;
+            }
+        }
+        console.log('max: ' + max);
+
+        for (let vMin = 0; vMin < values.length; vMin++) {
+            const elMin = values[vMin];
+            if (elMin < min) {
+                min = elMin;
+            }
+        }
+        console.log('min: ' + min);
+
+        //перезаписуємо містами значення
+        console.log(values);//було
+
+        values[6] = min;
+        values[9] = max;
+
+        console.log(values);//стало
+
+
+
+    </script>
+</body>
+</html>

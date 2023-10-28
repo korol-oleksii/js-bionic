@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Паліндром | Курсова Starter</title>
+</head>
+<body>
+
+<h3>Завдання 1</h3>
+<p>
+    Створіть функцію, яка визначатиме, чи є введений користувачем рядок паліндромом
+</p>
+<script>
+    let isPalindrome = prompt('Введіть слово паліндром');
+    function palindrome(str) {
+        let strArray = '';
+        let strReverse = str.toString().toLowerCase().split('').reverse().join('');
+
+        for (let i = 0; i < str.length; i++) {
+            strArray += str[i].toString().toLowerCase();
+        }
+
+        if (strArray === strReverse) {
+            alert('Це слово є паліндромом');
+        } else {
+            alert(`Це слово НЕ є паліндромом: ${strArray} and ${strReverse}`);
+        }
+    }
+    palindrome(isPalindrome);
+</script>
+
+</body>
+</html>

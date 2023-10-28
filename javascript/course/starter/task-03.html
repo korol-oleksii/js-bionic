@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Гра: «Як стати мільйонером» | Курсова Starter</title>
+</head>
+<body>
+
+<h3>Завдання 3</h3>
+<p>
+    Гра «Як стати мільйонером».
+</p>
+<script>
+
+    let totalPrize = 0;
+    let questions;
+    let isConfirm;
+    let millionQuestions = [
+        {
+            name: 'Яке слово є анаграмою для слова "СЛОВО"?',
+            answer: {
+                a: 'Слива',
+                b: 'Слава',
+                c: 'Олово',
+                d: 'Волос'
+            },
+            prize: 500
+        },
+        {
+            name: 'Яка мова не є програмуванням',
+            answer: {
+                a: 'JavaScript',
+                b: 'Ruby',
+                c: 'Php',
+                d: '#Cn++'
+            },
+            prize: 1000
+        },
+        {
+            name: 'Чи є JavaScript тим самим, що і Java?',
+            answer: {
+                a: 'Так',
+                b: 'Ні',
+                c: 'Не існує такої мови як Java',
+                d: 'Більше так, ніж ні'
+            },
+            prize: 2000
+        },
+        {
+            name: 'Що таке змінна у JavaScript?',
+            answer: {
+                a: 'Іменована область пам\'яті',
+                b: 'Це тип даних',
+                c: 'Це вбудована функція',
+                d: 'Операція зчеплення рядків'
+            },
+            prize: 3000
+        },
+        {
+            name: 'Що у JavaScript є булєвим типом?',
+            answer: {
+                a: 'true',
+                b: 'string',
+                c: 'null',
+                d: 'undefined'
+            },
+            prize: 5000
+        },
+        {
+            name: 'Який з операторів у JavaScript є суворим порівнянням',
+            answer: {
+                a: '==',
+                b: '!=',
+                c: '=',
+                d: '==='
+            },
+            prize: 8000
+        },
+        {
+            name: 'Який запис на JS виведе у консолі: 12',
+            answer: {
+                a: 'console.log("1 + 2")',
+                b: 'console.log(1 + 2)',
+                c: 'console.log(`1 + 2`)',
+                d: 'console.log("1" + "2")'
+            },
+            prize: 10000
+        },
+        {
+            name: 'Що з перерахованого є каскадними таблицями стилів?',
+            answer: {
+                a: 'CSS',
+                b: 'HTML',
+                c: 'JS',
+                d: 'PHP'
+            },
+            prize: 13000
+        },
+        {
+            name: 'Який атрибут у HTML відповідає за клас стиля',
+            answer: {
+                a: 'class',
+                b: 'className',
+                c: 'classList',
+                d: 'data-class'
+            },
+            prize: 15000
+        },
+        {
+            name: 'Яким є це посилання: https://site.com/catalog/page.php?',
+            answer: {
+                a: 'Відносним',
+                b: 'Абсолютним',
+                c: 'Відносно-абсолютним',
+                d: 'Абсолютно-відносним'
+            },
+            prize: 25000
+        },
+        {
+            name: 'Який тег є лінійним за своєю властивістю (без переназначенням у CSS)',
+            answer: {
+                a: '<details></details>',
+                b: '<div></div>',
+                c: '<span></span>',
+                d: '<nav></nav>'
+            },
+            prize: 50000
+        },
+        {
+            name: 'Де використовується з перерахованого "var"',
+            answer: {
+                a: 'Тільки у JS',
+                b: 'Тільки у JS та HTML',
+                c: 'Тільки у JS та CSS',
+                d: '"var" більше ніде не застосовується'
+            },
+            prize: 100000
+        },
+        {
+            name: 'Яка мова є мовою розмітки',
+            answer: {
+                a: 'HTML',
+                b: 'CSS',
+                c: 'JavaScript',
+                d: 'ECMAScript'
+            },
+            prize: 250000
+        },
+        {
+            name: 'Як відображається коментар у JavaScript',
+            answer: {
+                a: '//коментар',
+                b: '#коментар',
+                c: ';коментар',
+                d: '/коментар'
+            },
+            prize: 500000
+        },
+        {
+            name: 'У JavaScript "Послідовність символів, яка вкладена в одинарні або подвійні лапки" - це?',
+            answer: {
+                a: 'Конкатенація',
+                b: 'Шаблонний рядок',
+                c: 'Рядковий літерал',
+                d: 'Такого визначення не існує'
+            },
+            prize: 1000000
+        }
+    ];
+
+    for (let i = 0; i < millionQuestions.length; i++) {
+        // console.log(millionQuestions[i]);
+
+        let isThis = millionQuestions[i];
+
+        // for (let isKey in isThis) {
+        //     // console.log(isThis[key]);
+        //
+        // }
+        questions = prompt(`${isThis.name}\r\nа) ${isThis.answer.a}\r\nб) ${isThis.answer.b}\r\nв) ${isThis.answer.c}\r\nг) ${isThis.answer.d}`);
+        // if (i === 0) {
+        //     switch (questions) {
+        //         case 'г':
+        //             isConfirm = confirm('Вірно. Бажаєте продовжити?');
+        //             break;
+        //         default:
+        //             alert('Не вірна відповідь');
+        //             break;
+        //     }
+        // }
+
+        if (i === 0) {
+            if (questions === 'г') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 1) {
+            if (questions === 'г') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 2) {
+            if (questions === 'б') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 3) {
+            if (questions === 'а') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити?\r\nЯкщо Ви продовжите і відповісте не правильно - втратите ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 4) {
+            if (questions === 'а') {
+                totalPrize += isThis.prize;
+                isConfirm = confirm(`Дуже добре! Ви заробили гарантований виграш: ${isThis.prize}\r\nБажаєте продовжити?`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 5) {
+            if (questions === 'г') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 6) {
+            if (questions === 'г') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 7) {
+            if (questions === 'а') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 8) {
+            if (questions === 'а') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити?\r\nЯкщо Ви продовжите і відповісте не правильно - втратите ${isThis.prize}\r\nАле Ви все рівно отримаєте гарантований виграш: 5000`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 9) {
+            if (questions === 'б') {
+                totalPrize += isThis.prize - totalPrize;
+                isConfirm = confirm(`Чудово! Ви заробили гарантований виграш: ${isThis.prize}\r\nБажаєте продовжити?`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 10) {
+            if (questions === 'в') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 11) {
+            if (questions === 'в') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 12) {
+            if (questions === 'а') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити? Ви можете вже забрати: ${isThis.prize}`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 13) {
+            if (questions === 'а') {
+                isConfirm = confirm(`Вірно. Бажаєте продовжити?\r\nЯкщо Ви продовжите і відповісте не правильно - втратите ${isThis.prize}\r\nАле Ви все рівно отримаєте гарантований виграш: 25000`);
+                if (!isConfirm) {
+                    alert(`Ви завершили гру і ваш виграш складає: ${isThis.prize}`);
+                    break;
+                }
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        } else if (i === 14) {
+            totalPrize += isThis.prize - totalPrize;
+            if (questions === 'в') {
+                alert(`Вітаємо! Ви стали мільйонером :)\r\nВаш виграш склав: ${isThis.prize}`);
+                break;
+            } else {
+                alert('Не вірна відповідь');
+                break;
+            }
+        }
+
+    }//for
+
+    if (totalPrize > 0 && totalPrize < 1000000) {
+        alert(`Ви не дійшли до мільйона, але змогли виграти гарантований виграш: ${totalPrize}\r\nВітаємо :)`);
+    }
+
+</script>
+
+</body>
+</html>
