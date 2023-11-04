@@ -13,7 +13,24 @@
         Після того, як користувач ввів значення стоп, порахуйте суму всіх значень, які знаходяться в масиві.
     </pre>
     <script>
-        
+        let arr = [];
+
+        while (true) {
+            let value = prompt('Введіть значення, або слово "stop", щоб завершити сценарій');
+            if (value === 'stop') break;
+            let res = Number(value);
+            if (!isNaN(res)) {
+                arr.push(res);
+            }
+        }
+        console.log(arr);
+
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        alert(`Сума чисел, які потрапили у масив числових значень = ${sum}\r\nОтриманий масив: [${arr}]`);
     </script>
 </body>
-</html>
+</html>2

@@ -17,25 +17,17 @@
 
         let searchCity = prompt('Знайди місто: "London", "Paris", "Berlin", "Rome", "Budapest", "Lisbon", "Madrid", "Amsterdam"');
 
-        let index;
-        index = cities.indexOf(searchCity);
+        let res = cities.includes(searchCity);
 
-        console.log(index);
-        console.log(searchCity);
-        console.log('');
-
-        for (let i = 0; i < cities.length; i++) {
-            if (index > 0) {
+        if (res) {
+            for (let i = 0; i < cities.length; i++) {
                 if (cities[i] === searchCity) {
-                    console.log(cities[i]);
                     delete cities[i];
-                    alert(`${searchCity} видалений з масиву`);
+                    cities.splice(i, 1); // без цього методу буде замість видаленого міста "empty"
                 }
             }
-            else {
-                alert('Такого міста не має в цьому масиві');
-                break
-            }
+        } else {
+            alert('Такого міста не існує в цьому масиві')
         }
         console.log(cities);
 

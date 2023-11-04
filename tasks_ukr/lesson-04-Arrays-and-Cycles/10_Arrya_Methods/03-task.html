@@ -11,6 +11,8 @@
         Перекрийте сценарій та скористайтеся одним із методів, вивчених в уроці. Змініть код таким чином, щоб зберегти його введення.
     </pre>
     <script>
+        //========= завдання
+        console.log('=== у завдані =====');
         let values = [10, 20, 5, 7, 11, 8, 125, 4, 8, 3, 23];
         let oddValues = [];
         let evenValues = [];
@@ -42,6 +44,60 @@
         {
             console.log(evenVal);
         }
+
+
+        /* =============================
+            інший метод виведення [1]
+        ================================ */
+        console.log('=== інший метод виведення [1] =====');
+
+        let arrOddValue = [];
+        let arrEvenValue = [];
+
+        for (let i = 0; i < values.length; i++) {
+            if (values[i] % 2 === 0) {
+                arrEvenValue.push(values[i]);
+            } else {
+                arrOddValue.push(values[i]);
+            }
+        }
+
+        console.log('Непарні значення');
+        for (let odd = 0; odd < arrOddValue.length; odd++) {
+            console.log(arrOddValue[odd]);
+        }
+
+        console.log('Парні значення');
+        for (let even = 0; even < arrEvenValue.length; even++) {
+            console.log(arrEvenValue[even]);
+        }
+
+        /* =============================
+            інший метод виведення [2]
+        ================================ */
+        console.log('=== інший метод виведення [2] =====');
+
+        let arrOddValue2 = [];
+        let arrEvenValue2 = [];
+
+        for (let value2 of values) {
+            if (value2 % 2 === 0) {
+                arrEvenValue2.push(value2);
+            } else {
+                arrOddValue2.push(value2);
+            }
+        }
+
+        console.log('Непарні значення');
+        for (let arrOddValue2Element of arrOddValue2) {
+            console.log(arrOddValue2Element);
+        }
+
+        console.log('Парні значення');
+        for (let arrEvenValue2Element of arrEvenValue2) {
+            console.log(arrEvenValue2Element);
+        }
+
     </script>
 </body>
 </html>

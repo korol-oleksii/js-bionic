@@ -26,11 +26,48 @@
         prices[1] = 56;     // Біндери для паперу 51 мм
         prices[2] = 12.50;  // Ручка кулькова синя
 
-        let count = [];
-        count[0] = 2;   // Папір офісний А4, 80 г/м2, 500 л
-        count[1] = 10;  // Біндери для паперу 51 мм
-        count[2] = 10;  // Ручка кулькова синя
+        let counts = [];
 
+        // == було у завдані
+        //count[0] = 2;   // Папір офісний А4, 80 г/м2, 500 л
+        //count[1] = 10;  // Біндери для паперу 51 мм
+        //count[2] = 10;  // Ручка кулькова синя
+
+        //===================================================================
+
+        for (let i = 0; i < names.length; i++) {
+
+            const name = names[i];
+            const price = prices[i];
+
+            let countProduct = +prompt('Введіть кількість: ' + name + ' за ціною ' + price, 0);
+            if (isNaN(countProduct)) {
+                alert('Введене значення не є числом');
+                break;
+            } else {
+                counts.push(countProduct);
+            }
+        }
+        console.log(counts);
+
+        let costProducts = [];
+
+        let costProduct = 0;
+        let sumProduct = 0;
+
+        for (let i = 0; i < prices.length; i++) {
+            costProducts.push(prices[i] * counts[i]); //записуємо до масиву суму за кожен товар
+
+            costProduct = prices[i] * counts[i]; //підраховуємо суму за кожну одиницю товару
+            sumProduct += prices[i] * counts[i]; //сумуємо загальну суму товарів
+
+            alert(`Сума за ${names[i]}: ${costProduct}`);
+
+            console.log(prices[i] + ' * ' + counts[i] + ' = ' + costProduct);
+        }
+        console.log(costProducts);
+
+        alert(`Загальна сума складає: ${sumProduct}`);
     </script>
 </body>
 
