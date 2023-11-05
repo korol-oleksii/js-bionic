@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 04 | Завдання 2</title>
+</head>
+<body>
+<h2>За допомогою prompt попросіть користувача ввести пропозицію. Виведіть на екран кількість слів у цій пропозиції.</h2>
+<script>
+    let prom = prompt('Введіть будь-яку пропозицію');
+    let trimProm = prom.split(' ');
+    let word = 0;
+    let letter = 0;
+    // визначаємо к-ть слів
+    for (let i = 0; i < trimProm.length; i++) {
+        console.log(trimProm[i]);
+        word = i + 1;
+    }
+    // визначаємо к-ть знаків з пробілом
+    for (let i = 0; i < prom.length; i++) {
+        console.log(prom[i]);
+        letter = i + 1;
+    }
+    alert(`К-ть слів: ${word}\r\nК-ть знаків з пробілом: ${letter}`);
+</script>
+</body>
+</html>
