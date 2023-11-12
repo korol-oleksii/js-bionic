@@ -24,6 +24,10 @@
         }
         console.log('min: ' + minValue);
 
+        let minMath = Math.min(...values);
+        console.log(`або Math.min: ${minMath}`);
+        console.log('---------------------------');
+
         //максимальне значення
         let maxValue = Number.MIN_VALUE;
 
@@ -34,6 +38,10 @@
             }
         }
         console.log('max: ' + maxValue);
+
+        let maxMath = Math.max(...values);
+        console.log(`або Math.max: ${maxMath}`);
+        console.log('---------------------------');
 
         //сума всіх елементів масиву
         let sum = 0;

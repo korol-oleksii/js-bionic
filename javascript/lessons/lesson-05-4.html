@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 05 | Завдання 3</title>
+</head>
+<body>
+<h2>Створіть одну глобальну змінну з довільним значенням та дві функції. Покажіть, що глобальна змінна може використовуватися в цих двох функціях.</h2>
+<script>
+
+    var global = 10;
+
+    function mulDiv(a, b) {
+        return a * b / global;
+    }
+    console.log(mulDiv(20, 3)); //6
+
+    function sumMinus(a, b) {
+        return a + b - global;
+    }
+    console.log(sumMinus(30, 40)); //60
+
+</script>
+</body>
+</html>

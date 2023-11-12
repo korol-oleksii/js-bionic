@@ -30,7 +30,7 @@
         let count = [];
         for (let i = 0; i < names.length; i++) {
             const productName = names[i];
-            let counttoBuy = +prompt("Вкажіть кількість для " + productName);
+            let counttoBuy = +prompt("Без застосування функції - для порівняння\r\n----------\r\nВкажіть кількість для " + productName);
 
             if (isNaN(counttoBuy))
                 counttoBuy = 0;
@@ -49,6 +49,42 @@
             console.log(`Куплено ${productName} на суму ${price}`);
         }
         console.log("Всього продуктів куплено на " + totalSum);
+
+console.log('\r\n' +'=============== function ====================='+ '\r\n\r\n');
+
+        let countedProducts = promptCountProducts();
+        let totalPrice = calcTotalPrice(countedProducts);
+        showProductAll(totalPrice);
+
+        function promptCountProducts() {
+            let products = [];
+            for (let i = 0; i < names.length; i++) {
+                const productNameValue = names[i];
+
+                products[i] = +prompt("За допомогою функції\r\n----------\r\nВкажіть кількість для " + productNameValue);
+
+                if (isNaN(products[i]))
+                    products[i] = 0;
+            }
+            return products;
+        }
+
+        function calcTotalPrice(products) {
+            let totalSum = 0;
+            for (let i = 0; i < products.length; i++) {
+                const productNameValue = names[i];
+
+                let priceValue = prices[i] * products[i];
+                totalSum += priceValue;
+                console.log(`Куплено ${productNameValue} на суму ${priceValue}`);
+            }
+            return totalSum;
+        }
+
+        function showProductAll(productAllPrice) {
+            console.log("Всього продуктів куплено на " + productAllPrice);
+        }
+
     </script>
 </body>
 

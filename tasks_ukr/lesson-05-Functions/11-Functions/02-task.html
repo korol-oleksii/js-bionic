@@ -12,7 +12,14 @@
         Якщо параметр відсутній, не використовуйте значення для розрахунку середнього арифметичного значення.
     </pre>
     <script>
-        
+        function avg(a, b, c) {
+            if (a !== undefined && b !== undefined && c !== undefined) {
+                return ((a + b + c) / 3);
+            } else {
+                alert('Ви не ввели усі аргументи');
+            }
+        }
+        console.log('Середнє значення:', avg(1, 2, 3));
     </script>
 </body>
 </html>

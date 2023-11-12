@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 2</title>
+    <title>Task 1</title>
 </head>
-
 <body>
     <pre>
         Завдання:
-        Виправте помилку у сценарії, не змінюючи способу визначення функцій (функції повинні створюватися як іменована
-        функція-вираз).
+        Виправте помилку в коді, пов'язаному з областями видимостей.
     </pre>
     <script>
         // назви товарів
@@ -26,12 +23,13 @@
         prices[1] = 56;     // Біндери для паперу 51 мм
         prices[2] = 12.50;  // Ручка кулькова синя
 
-        let count = [];
+        let count = []; // вирішення умови завдання
 
         initCountArray();
         calculateSum();
 
-        let initCountArray = function () {
+        function initCountArray() {
+            // let count = []; // у завдані
             for (let i = 0; i < names.length; i++) {
                 const productName = names[i];
                 let counttoBuy = +prompt("Вкажіть кількість для " + productName);
@@ -43,7 +41,7 @@
             }
         }
 
-        let calculateSum = function () {
+        function calculateSum() {
             let totalSum = 0;
             for (let i = 0; i < names.length; i++) {
                 const productName = names[i];
@@ -59,5 +57,4 @@
     </script>
 
 </body>
-
 </html>

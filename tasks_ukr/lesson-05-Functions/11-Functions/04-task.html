@@ -15,11 +15,22 @@
         або в завданнях з минулих уроків.
     </pre>
     <script>
+        // let throwCount = +prompt("Скільки разів ви хочете кинути шостигранний кубик");
+        //
+        // for (let i = 0; i < throwCount; i++) {
+        //     const result = random(1, 6);
+        //     console.log(result);
+        // }
+
         let throwCount = +prompt("Скільки разів ви хочете кинути шостигранний кубик");
 
         for (let i = 0; i < throwCount; i++) {
             const result = random(1, 6);
             console.log(result);
+        }
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
         }
 
     </script>

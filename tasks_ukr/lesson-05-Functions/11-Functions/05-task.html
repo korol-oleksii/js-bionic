@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <pre>
+        Завдання:
+        Створіть функцію, яка приймає масив значень та повертає масив з значеннями, що дублюються, або null якщо
+        повторюваних значень у масиві немає.
+    </pre>
+    <script>
+        function searchDuplicates(arr) {
+            let matches = [];
+            let duplicates = [];
+
+            for (let element of arr) {
+                if (matches[element] === undefined) {
+                    matches[element] = 1;
+                } else {
+                    if (matches[element] === 1) {
+                        duplicates.push(element);
+                    }
+                    matches[element]++;
+                }
+            }
+
+            if (duplicates.length > 0) {
+                return duplicates;
+            } else {
+                return null;
+            }
+        }
+
+        let samples = [5, 2, 5, 4, 2, 5, 3, 3];
+        let res = searchDuplicates(samples);
+
+        console.log(res);
+
+    </script>
+</body>
+</html>
